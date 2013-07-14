@@ -1,0 +1,19 @@
+<Alloy>
+	<Window> 
+		<NavigationGroup id="mainNavGroup" platform="ios">
+			<Require id="repo" src="BrowserWindow"></Require>
+		</NavigationGroup>
+	</Window>
+	<Window id="leftWindow">
+        <TableView id="leftTable" rowHeight="70" >
+            <TableViewRow leftImage="/earthserver.jpg" title="EarthServer" repo="ESArep" header="gLibrary repositories"/>
+            <TableViewRow leftImage="/deroberto.jpg" title="De Roberto" repo="deroberto2" />
+            <TableViewRow leftImage="appicon.png" title="MEDrepo" repo="medrepo"/>
+            <TableViewRow leftImage="appicon.png" title="ICCU" repo="ICCU"/>
+            <TableViewRow leftImage="appicon.png" title="agINFRA" repo="aginfra"/>
+            <TableViewRow leftImage="appicon.png" title="ChinaRelics" repo="myTestRepo"/>
+            <TableViewRow leftImage="appicon.png" title="Demo Repo" repo="demo"/>
+            <TableViewRow leftImage="appicon.png" title="EELA" repo="EELA"/>
+        </TableView>
+    </Window>
+</Alloy>

@@ -1,0 +1,13 @@
+".container": {
+	backgroundColor: "white"
+},
+"#filterList": {
+	bottom: 0
+},
+"#pickerView": {
+	height:251,
+	bottom:-251
+},
+"Toolbar[platform=ios]": {
+	top: 0
+}

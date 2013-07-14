@@ -1,0 +1,6 @@
+<Alloy>
+	<Window title = "Choose a Federation" class="container">
+		<TableView id="federationsTableView" onClick="openIdpList">		
+		</TableView>
+	</Window>
+</Alloy>

@@ -1,0 +1,5 @@
+<Alloy>
+	<Window class="container">
+		<View ns="Ti.Map" id="mapview" onClick="downloadReplica"></View>
+	</Window>
+</Alloy>

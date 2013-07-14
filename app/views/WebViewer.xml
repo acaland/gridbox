@@ -1,0 +1,22 @@
+<Alloy>
+	<Window class="container">
+		<ProgressBar id="pbar" visible="true" message="Downloading..." width="90%"></ProgressBar>
+		<WebView id="wv" visible="false"></WebView>
+		<Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
+			<!-- The Items tag sets the Toolbar.items property. -->
+			<Items>
+				
+				<FlexSpace/>
+				<Button title="Share"  systemButton="Ti.UI.iPhone.SystemButton.ACTION" onClick="shareLink"></Button>
+
+			</Items>
+		</Toolbar>
+		<OptionDialog id="shareDialog" title="Share Link" onClick="chooseLink">
+			<Options>
+				<Option>Public</Option>
+				<Option>Shibboleth protected</Option>
+				<Option>Cancel</Option>
+			</Options>
+		</OptionDialog>
+	</Window>
+</Alloy>

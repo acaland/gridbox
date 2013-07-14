@@ -1,0 +1,44 @@
+<Alloy>
+	<Window onOpen="load">
+		<RightNavButton>
+			<View layout="horizontal" >
+				<Button  height="32" image="/upload.png" style="Ti.UI.iPhone.SystemButtonStyle.BAR" onClick="imgUpload"></Button>
+				<Button  left="20" image="/folder_add.png" style="Ti.UI.iPhone.SystemButtonStyle.BAR" onClick="openFolderCreate"></Button>
+			</View>
+		</RightNavButton>
+		<TableView id="listTableView" bottom="44dp" onClick="loadChild"></TableView>
+		<View visible="false" id="loadingView" width="120" height="120" borderRadius="5" opacity="0.7" backgroundColor="black">
+			<ActivityIndicator visible="true" message="Loading..." style="Ti.UI.iPhone.ActivityIndicatorStyle.BIG" color="white"></ActivityIndicator>
+		</View>
+		<Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
+			<!-- The Items tag sets the Toolbar.items property. -->
+			<Items>
+				<Button id="logout" title="Log Out" style="Ti.UI.iPhone.SystemButtonStyle.DONE" />
+				<FlexSpace/>
+				<Label id="usarnameLbl">Logged as</Label>
+				<Label id="username" />
+				<FlexSpace/>
+				<Button title="Settings" image="/settings3.png" style="Ti.UI.iPhone.SystemButtonStyle.PLAIN"></Button>
+
+			</Items>
+		</Toolbar>
+		<OptionDialog id="uploadDialog" title="Upload Image" onClick="chooseOrigin">
+			<Options>
+				<Option>Camera</Option>
+				<Option>Photo Gallery</Option>
+				<Option>Cancel</Option>
+			</Options>
+		</OptionDialog>
+
+	</Window>
+	<Window id="newFolder" title="New Folder" modal="true" backgroundColor="white">
+		<RightNavButton>
+			<Button title="Create" onClick="folderCreate"></Button>
+		</RightNavButton>
+		<LeftNavButton>
+			<Button title="Cancel" onClick="disposeWindow"></Button>
+		</LeftNavButton>
+		<TextField id="folderName" top="100" width="90%" height="50dp" hintText="folder name" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"></TextField>
+	</Window>
+
+</Alloy>

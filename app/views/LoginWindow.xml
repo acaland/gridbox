@@ -1,0 +1,7 @@
+<Alloy>
+	<Window>
+        <NavigationGroup id="loginNavGroup" platform="ios">
+           <Require type="view" src="federationList" id="federationListWindow"/>
+        </NavigationGroup>
+    </Window>
+</Alloy>
