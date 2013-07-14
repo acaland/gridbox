@@ -20,11 +20,16 @@ if (OS_IOS) {
 		leftLedge : 100
 	});
 
+	$.repo.getView('settingsBtn').addEventListener("click", function(e) {
+		window.toggleLeftView();
+	});
+	
 	$.leftTable.addEventListener("click", function(e) {
 		window.toggleLeftView();
-		Alloy.Globals.repository = e.rowData.repo;
-		$.repo.title = e.rowData.title;
-		loadTypeList();
+		//Alloy.Globals.repository = e.rowData.repo;
+		//$.repo.title = e.rowData.title;
+		//loadTypeList();
+		
 		//alert("You clicked " + e.rowData.repo)
 		/* switch(e.index){
 		 case 0:

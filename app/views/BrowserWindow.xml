@@ -18,7 +18,7 @@
 				<Label id="usarnameLbl">Logged as</Label>
 				<Label id="username" />
 				<FlexSpace/>
-				<Button title="Settings" image="/settings3.png" style="Ti.UI.iPhone.SystemButtonStyle.PLAIN"></Button>
+				<Button id="settingsBtn" title="Settings" image="/settings3.png" style="Ti.UI.iPhone.SystemButtonStyle.PLAIN"></Button>
 
 			</Items>
 		</Toolbar>
@@ -39,6 +39,28 @@
 			<Button title="Cancel" onClick="disposeWindow"></Button>
 		</LeftNavButton>
 		<TextField id="folderName" top="100" width="90%" height="50dp" hintText="folder name" borderStyle="Ti.UI.INPUT_BORDERSTYLE_ROUNDED"></TextField>
+	</Window>
+	<Window id="uploadWindow" title="Image Upload" modal="true" backgroundColor="white">
+		<RightNavButton>
+			<Button title="Upload" onClick="prepareUpload"></Button>
+		</RightNavButton>
+		<LeftNavButton>
+			<Button title="Cancel" onClick="disposeUploadWindow"></Button>
+		</LeftNavButton>
+		<TableView style="Titanium.UI.iPhone.TableViewStyle.GROUPED" onClick="storageType">
+			<TableViewSection headerTitle="Metadata">
+				<TableViewRow>
+					<TextField id="fileNameTxt"  width="90%" height="50dp" hintText="file name"></TextField>
+				</TableViewRow>
+			</TableViewSection>
+			<TableViewSection headerTitle="Replicas">
+				<TableViewRow leftImage="/storage.png" title="INFN Grid SE"></TableViewRow>
+				<TableViewRow leftImage="/CloudStorage.png" title="Amazon S3"></TableViewRow>
+				<TableViewRow leftImage="/dropbox.png" title="Dropbox"></TableViewRow>
+			</TableViewSection>
+		</TableView>
+		<ImageView id="preview" top="320" height="100" backgroundColor="white" width="100" borderRadius="5" image="/appicon.png" onClick="openDialog"/>
+
 	</Window>
 
 </Alloy>
