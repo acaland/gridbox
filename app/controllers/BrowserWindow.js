@@ -56,6 +56,7 @@ function load(_callback) {
 				}
 				//row.title = item.FileName;
 				row.hasDetail = true;
+				var thumbnail = Ti.Utils.base64decode(item.thumbnail);
 				if (item.Type == 'JPG' || item.Type == 'jpg') {
 					row.leftImage = '/jpg.png';
 				} else if (item.Type == 'PDF' || item.Type == 'pdf') {
@@ -229,6 +230,7 @@ function uploadFile(url, filename, media, row) {
 	metadata.Type = 'jpg';
 	metadata.Size = media.length;
 	metadata.Replica = '{' + Alloy.Globals.gateway + 'dm/vo.indicate-project.eu/infn-se-03.ct.pi2s2.it/dpm/ct.pi2s2.it/home/vo.indicate-project.eu/glibrary/' + filename + '}';
+	var thumbnail = Ti.Utils.base64encode(media.imageAsThumbnail(60, 0, 5)).text.replace(/\r\n/g, '');;
 	xhr.metadata = metadata;
 	xhr.onload = function() {
 		Ti.API.info(xhr.responseText);
